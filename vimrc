@@ -33,6 +33,9 @@ Plugin 'klen/python-mode'	        " Python mode (docs, refactor, lints, highligh
 " Plugin 'mitsuhiko/vim-jinja'		" Jinja support for vim
 " Plugin 'mitsuhiko/vim-python-combined'  " Combined Python 2/3 for Vim
 
+" --- Ruby ---
+Plugin 'vim-ruby/vim-ruby'
+
 call vundle#end()            		" required
 filetype on
 filetype plugin on
