@@ -36,6 +36,11 @@ Plugin 'klen/python-mode'	        " Python mode (docs, refactor, lints, highligh
 " --- Ruby ---
 Plugin 'vim-ruby/vim-ruby'
 
+" --- Jedi-vim ---
+Plugin 'davidhalter/jedi-vim'
+
+Plugin 'Valloric/YouCompleteMe'
+
 call vundle#end()            		" required
 filetype on
 filetype plugin on
@@ -45,11 +50,16 @@ filetype plugin indent on
 " Python-mode settings
 "=====================================================
 " отключаем автокомплит по коду (у нас вместо него используется jedi-vim)
-" let g:pymode_rope = 0
-" let g:pymode_rope_completion = 0
-" let g:pymode_rope_complete_on_dot = 0
-let g:pymode_rope_completion = 1
-let g:pymode_rope_complete_on_dot = 1
+let g:pymode_rope = 0
+let g:pymode_rope_completion = 0
+let g:pymode_rope_complete_on_dot = 0
+" let g:pymode_rope_completion = 1
+" let g:pymode_rope_complete_on_dot = 1
+
+" включаем jedi
+
+" увеличим максимальную сложность функций при проверке
+let g:pymode_lint_options_mccabe = { 'complexity': 20 }
 
 " документация
 " let g:pymode_doc = 0
@@ -75,7 +85,7 @@ let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " отключить autofold по коду
-" let g:pymode_folding = 0
+let g:pymode_folding = 0
 
 " возможность запускать код
 " let g:pymode_run = 0
@@ -83,4 +93,14 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 let g:pymode_trim_whitespaces = 1
 
 let g:pymode_options_colorcolumn = 0
+
+
+let g:molokai_original = 1
+syntax enable
+colorscheme molokai
+set background=dark
+" colorscheme solarized
+set backspace=2
+
+map <leader>jd :YcmCompleter GoTo<CR>
 

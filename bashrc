@@ -117,3 +117,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export PATH=/opt/vim/bin/:$PATH
+export TERM=xterm-256color

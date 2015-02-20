@@ -13,7 +13,8 @@ files="bashrc vimrc"    # list of files/folders to symlink in homedir
 # http://habrahabr.ru/post/224979/
 mkdir ~/.vim
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
+mkdir ~/.vim/colors/
+cp $dir/molokai.vim ~/.vim/colors/
 ##########
 
 # create dotfiles_old in homedir
