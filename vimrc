@@ -29,7 +29,6 @@ Plugin 'gmarik/Vundle.vim'		" let Vundle manage Vundle, required
 "---------------=== Languages support ===-------------
 " --- Python ---
 Plugin 'klen/python-mode'	        " Python mode (docs, refactor, lints, highlighting, run and ipdb and more)
-" Plugin 'davidhalter/jedi-vim' 		" Jedi-vim autocomplete plugin
 " Plugin 'mitsuhiko/vim-jinja'		" Jinja support for vim
 " Plugin 'mitsuhiko/vim-python-combined'  " Combined Python 2/3 for Vim
 
@@ -40,6 +39,10 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'davidhalter/jedi-vim'
 
 Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'tpope/vim-pathogen'
+
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()            		" required
 filetype on
@@ -56,7 +59,10 @@ let g:pymode_rope_complete_on_dot = 0
 " let g:pymode_rope_completion = 1
 " let g:pymode_rope_complete_on_dot = 1
 
-" включаем jedi
+" настройки jedi and ycm
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " увеличим максимальную сложность функций при проверке
 let g:pymode_lint_options_mccabe = { 'complexity': 20 }
@@ -94,13 +100,18 @@ let g:pymode_trim_whitespaces = 1
 
 let g:pymode_options_colorcolumn = 0
 
-
-let g:molokai_original = 1
-syntax enable
-colorscheme molokai
-set background=dark
-" colorscheme solarized
 set backspace=2
 
-map <leader>jd :YcmCompleter GoTo<CR>
+syntax enable
+set background=dark
 
+" let g:molokai_original = 1
+" colorscheme molokai
+
+set t_Co=256
+let g:solarized_termcolors=256
+let g:solarized_termtrans=0
+
+colorscheme solarized
+
+map <leader>jd :YcmCompleter GoTo<CR>
