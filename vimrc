@@ -31,17 +31,24 @@ Plugin 'gmarik/Vundle.vim'		" let Vundle manage Vundle, required
 Plugin 'klen/python-mode'	        " Python mode (docs, refactor, lints, highlighting, run and ipdb and more)
 " Plugin 'mitsuhiko/vim-jinja'		" Jinja support for vim
 " Plugin 'mitsuhiko/vim-python-combined'  " Combined Python 2/3 for Vim
+" --- Jedi-vim ---
+Plugin 'davidhalter/jedi-vim'
+Plugin 'Valloric/YouCompleteMe'
+
+"------------------=== Other ===----------------------
+Plugin 'bling/vim-airline'              " Lean & mean status/tabline for vim
+Plugin 'tpope/vim-surround'     " Parentheses, brackets, quotes, XML tags, and more
+
+" auto pairs
+Plugin 'jiangmiao/auto-pairs'
 
 " --- Ruby ---
 Plugin 'vim-ruby/vim-ruby'
 
-" --- Jedi-vim ---
-Plugin 'davidhalter/jedi-vim'
-
-Plugin 'Valloric/YouCompleteMe'
-
+" pathogen
 Plugin 'tpope/vim-pathogen'
 
+" colorschemes
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 
@@ -105,6 +112,7 @@ let g:pymode_trim_whitespaces = 1
 let g:pymode_options_colorcolumn = 0
 
 set backspace=2
+set statusline=%<%f\ [%Y%R%W]%1*%{(&modified)?'\ [+]\ ':''}%*%=%c%V,%l\ %P\ [%n]
 
 syntax enable
 set background=dark
@@ -118,3 +126,12 @@ colorscheme molokai
 " colorscheme solarized
 
 map <leader>jd :YcmCompleter GoTo<CR>
+map <C-p> :bp<CR>
+map <C-n> :bn<CR>
+map <C-c> :bd<CR>
+map <F2> :w<CR>
+
+" airline status bar
+let g:airline#extensions#tabline#enabled = 1
+set laststatus=2
+
