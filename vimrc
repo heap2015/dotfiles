@@ -43,8 +43,12 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-pathogen'
 
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
 
 call vundle#end()            		" required
+
+execute pathogen#infect()
+
 filetype on
 filetype plugin on
 filetype plugin indent on
@@ -104,14 +108,13 @@ set backspace=2
 
 syntax enable
 set background=dark
-
-" let g:molokai_original = 1
-" colorscheme molokai
-
 set t_Co=256
-let g:solarized_termcolors=256
-let g:solarized_termtrans=0
 
-colorscheme solarized
+let g:molokai_original = 1
+colorscheme molokai
+
+" let g:solarized_termcolors=256
+"let g:solarized_termtrans=0
+" colorscheme solarized
 
 map <leader>jd :YcmCompleter GoTo<CR>
