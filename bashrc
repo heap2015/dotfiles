@@ -121,3 +121,6 @@ fi
 export PATH=/opt/vim/bin/:/opt/tmux/bin/:$PATH
 export LD_LIBRARY_PATH=/opt/tmux/lib:$LD_LIBRARY_PATH
 export TERM=xterm-256color
+
+alias tmux='tmux attach || tmux new'
+
