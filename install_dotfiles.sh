@@ -8,12 +8,18 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc"    # list of files/folders to symlink in homedir
+files="bashrc vimrc tmux.conf tmux-powerlinerc"    # list of files/folders to symlink in homedir
 
 # http://habrahabr.ru/post/224979/
 mkdir ~/.vim
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ##########
+
+# tmux theme
+cd ~
+git clone git clone https://github.com/erikw/tmux-powerline.git
+cp $dir/custom-theme.sh ~/tmux-powerline/themes/
+############
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
