@@ -17,7 +17,7 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # tmux theme
 cd ~
-git clone git clone https://github.com/erikw/tmux-powerline.git
+git clone https://github.com/erikw/tmux-powerline.git
 cp $dir/custom-theme.sh ~/tmux-powerline/themes/
 ############
 
