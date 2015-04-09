@@ -52,6 +52,15 @@ Plugin 'tpope/vim-pathogen'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 
+" NERD tree plugin
+Plugin 'scrooloose/nerdtree'
+
+" PHP extended syntax highlighting
+Plugin 'StanAngeloff/php.vim'
+
+" Syntax checker
+Plugin 'scrooloose/syntastic'
+
 call vundle#end()            		" required
 
 execute pathogen#infect()
@@ -136,3 +145,30 @@ let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 
 set number
+set tabstop=4
+
+" NERD Tree binding
+map <C-l> :NERDTreeToggle<CR>
+
+" Put at the very end of your .vimrc file.
+
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
+
+" Syntax checking
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+" let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_ignore_files = ['\.py$']
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
