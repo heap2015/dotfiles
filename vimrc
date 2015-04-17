@@ -61,6 +61,9 @@ Plugin 'StanAngeloff/php.vim'
 " Syntax checker
 Plugin 'scrooloose/syntastic'
 
+" HTML & CSS
+Plugin 'mattn/emmet-vim'
+
 call vundle#end()            		" required
 
 execute pathogen#infect()
