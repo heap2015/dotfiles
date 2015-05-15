@@ -1,3 +1,27 @@
+set number
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+set smartindent
+set autoindent
+set wrap
+set showmatch
+set hlsearch
+set incsearch
+set listchars=tab:..
+set list
+set ffs=unix,dos,mac
+set fencs=utf-8,cp1251,koi8-r,ucs-2,cp866
+
+set nu
+set ls=2
+
+set smartcase
+
+map <F3> /
+map <F4> :let @/ = ""<CR>
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -51,6 +75,7 @@ Plugin 'tpope/vim-pathogen'
 " colorschemes
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
+Plugin 'reedes/vim-colors-pencil'
 
 " NERD tree plugin
 Plugin 'scrooloose/nerdtree'
@@ -147,8 +172,6 @@ map <F2> :w<CR>
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 
-set number
-set tabstop=4
 
 " NERD Tree binding
 map <C-l> :NERDTreeToggle<CR>
